@@ -1,4 +1,3 @@
-from re import X
 import tkinter as tk
 import numpy as np
 
@@ -58,7 +57,7 @@ def draw_dot(event):
     if (phi > 0):
         temp_y = np.tan(np.arctan(y_img / f) + phi * np.pi / 180) * f
 
-        input_canvas.create_text(10, 85, anchor = "w", font = ("Purisa", 10), text = ("virtual y = " + str(temp_y)))
+        input_canvas.create_text(10, 85, anchor = "w", font = ("Purisa", 10), text = ("virtual y = " + str(temp_y)), fill = "white")
 
 
         temp_y = canvas_height - temp_y
@@ -69,10 +68,9 @@ def draw_dot(event):
 
     
     elif (phi < 0):
-        print("hi")
         temp_y = np.tan(np.arctan(y_img / f) + phi * np.pi / 180) * f
 
-        input_canvas.create_text(10, 85, anchor = "w", font = ("Purisa", 10), text = ("virtual y = " + str(temp_y)))
+        input_canvas.create_text(10, 85, anchor = "w", font = ("Purisa", 10), text = ("virtual y = " + str(temp_y)), fill = "white")
 
         temp_y = canvas_height - temp_y
 
@@ -81,7 +79,7 @@ def draw_dot(event):
         canvas.create_oval(x1, temp_y, x1, temp_y, fill = "yellow", width = 4)
         
     else:
-        input_canvas.create_text(10, 85, anchor = "w", font = ("Purisa", 10), text = ("no virtual y"))
+        input_canvas.create_text(10, 85, anchor = "w", font = ("Purisa", 10), text = ("no virtual y"), fill = "white")
     
     calculate_distance(x1, y1)
 
@@ -95,7 +93,7 @@ def calculate_distance(x1, y1):
     temp_atan = np.arctan(y_img / f)
     temp_atan = np.tan(temp_atan + phi*np.pi/180.0)
     distance = np.sqrt(np.power(tape_height/temp_atan, 2) + np.power(((tape_height*x_img)/(temp_atan*f)),2))
-    input_canvas.create_text(10, 55, anchor = "w", font = ("Purisa", 10), text = ("distance = " + str(distance)))
+    input_canvas.create_text(10, 55, anchor = "w", font = ("Purisa", 10), text = ("distance = " + str(distance)), fill = "white")
 
     if (phi > 0):
         temp_y = np.tan(np.arctan(y_img / f) + phi * np.pi / 180) * f
@@ -103,7 +101,7 @@ def calculate_distance(x1, y1):
 
     angle = np.arcsin(x_img * tape_height / (y_img * distance)) * 180 / np.pi
 
-    input_canvas.create_text(10, 70, anchor = "w", font = ("Purisa", 10), text = ("angle = " + str(angle)))
+    input_canvas.create_text(10, 70, anchor = "w", font = ("Purisa", 10), text = ("angle = " + str(angle)), fill = "white")
 
 
 # def get_height():
