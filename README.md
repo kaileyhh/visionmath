@@ -17,7 +17,7 @@ rel="stylesheet"
 href="css/main.css"
 />
 
-<title>vision math</title>
+
 </head>
 <body style="background-color: white;">
 <div class="sidenav">
