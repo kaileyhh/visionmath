@@ -183,7 +183,7 @@ alternatively, $$\rho = arctan(\frac{y_{img}}{f}) = arctan(\frac{h}{z})$$
 Assumptions: FOV is still centered.
 </p>
 <p>
-Since there is horizontal tilt, x_img != 0. So we have a right triangle with legs x_img, in non-camera verison, and z, and hypotenuse z_theta, where z_theta is actual distance to target and $$z$$ is the distance to the target if it were aligned. We already know that
+Since there is horizontal tilt, x_img != 0. So we have a right triangle with legs x_img, in non-camera verison, and z, and hypotenuse z_theta, where z_theta is actual distance to target and z is the distance to the target if it were aligned. We already know that
 
 $$z = \frac{hf}{y_{img}}$$
  $$z^2 + (\frac{x_{img}h}{y_{img}})^2 = {z_\theta}^2$$
@@ -193,7 +193,7 @@ $$z_\theta = \sqrt{(\frac{hf}{y_{img}})^2 + (\frac{x_{img}h}{y_{img}})^2}$$
 
 <h2 id="vertical_tilt">tilt in the vertical direction</h2>
 <p>
-Now the FOV is no longer centered. There is a tilt of $$\varphi$$ radians up. For now, we will disregard horizontal tilt and assume we are aligned to the target.
+Now the FOV is no longer centered. There is a tilt of phi radians up. For now, we will disregard horizontal tilt and assume we are aligned to the target.
 </p>
 <p>
 $$\theta = arctan(\frac{y_{img}}{f})$$
