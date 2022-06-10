@@ -165,6 +165,9 @@ $$y_v$$
 </tr>
 
 </table>
+ 
+<img src=/images/tkinter.png height="300"> <img src=/images/variables.png height="300">
+<img src=/images/interface.png height="300"> <img src=/images/pinhole.png height="300">
 
 
 <h2 id="no_tilt"> no tilt in any direction</h2>
@@ -177,6 +180,9 @@ because of how a pinhole camera works, and since no tilt in any axis, $$x_{img} 
 <p>
 alternatively, $$\rho = arctan(\frac{y_{img}}{f}) = arctan(\frac{h}{z})$$
 </p>
+<div align="center">
+<img src=/images/notilt.png height="300">
+</div>
 
 <h2 id="horizontal_tilt">tilt in the horizontal direction</h2> 
 <p>
@@ -190,6 +196,9 @@ $$z = \frac{hf}{y_{img}}$$
 solving for $${z_\theta}$$, we get
 $$z_\theta = \sqrt{(\frac{hf}{y_{img}})^2 + (\frac{x_{img}h}{y_{img}})^2}$$
 </p>
+<div align="center">
+<img src=/images/horizontaltilt.png height="300">
+</div>
 
 <h2 id="vertical_tilt">tilt in the vertical direction</h2>
 <p>
@@ -205,6 +214,9 @@ $$z_\varphi = \frac{h}{tan(arctan(\frac{y_{img}}{f}) + \varphi)}$$
 <p>
 We also get that $$y_v = tan(arctan(\frac{y_{img}}{f} + \varphi))\cdot f$$
 </p>
+<div align="center">
+<img src=/images/verticaltilt.png height="300">
+</div>
 
 <h2 id="all_tilt"> all 3 axis together</h2>
 <p>
