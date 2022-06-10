@@ -1,5 +1,4 @@
 import cv2
-import tkinter
 import numpy as np
 
 canvas_width = 320
