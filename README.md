@@ -66,7 +66,7 @@ $$x_{img}$$
 distance from the center horizontally in px, right = positive and left = negative
 </td>
 <td>
-$$160 < x_{img} < 320$$
+$$-160 < x_{img} < 160$$
 </td>
 </tr>
 <tr>
