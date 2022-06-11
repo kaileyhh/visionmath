@@ -22,6 +22,7 @@ href="css/main.css"
 <body style="background-color: white;">
 <div class="sidenav">
 <a href="#title"> <i class="oswald"; style="font-size: 25px;">vision math!</i></a>
+<a href="#python">tkinter</a>
 <a href="#variable_h">table of variables</a>
 <a href="#no_tilt">no tilt</a>
 <a href="#horizontal_tilt">horizontal tilt</a>
@@ -34,6 +35,11 @@ href="css/main.css"
 </div>
 
 <div class="main">
+
+<h2 id="python"> python script usage </h2>
+<img src=/images/tkinter.png height="300"> 
+Click on the screen to put a detected target, it will calculate distance and angle for you. You can also change height from camera to target, camera focal length, and upwards / downards tilt. Height and focal length have to be positive. To reset to defaults, you have to click update again (and update whenever you change something).
+
 <h2 id="variable_h">table of variables </h2>
 <table id="variable_table">
 <tr>
@@ -124,7 +130,7 @@ $$\rho$$
 angle between robot and target, vertically
 </td>
 <td>
-$$arctan(\frac{h}{z}$$
+$$arctan(\frac{h}{z})$$
 </td>
 </tr>
 
@@ -166,8 +172,7 @@ $$y_v$$
 
 </table>
  
-<img src=/images/tkinter.png height="300"> <img src=/images/variables.png height="300">
-<img src=/images/interface.png height="300"> <img src=/images/pinhole.png height="300">
+<img src=/images/variables.png height="300"> <img src=/images/interface.png height="300"> <img src=/images/pinhole.png height="300">
 
 
 <h2 id="no_tilt"> no tilt in any direction</h2>
