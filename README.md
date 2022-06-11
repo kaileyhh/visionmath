@@ -38,6 +38,7 @@ href="css/main.css"
 
 <h2 id="python"> python script usage </h2>
 <img src=/images/tkinter.png height="300"> 
+ <br />
 Click on the screen to put a detected target, it will calculate distance and angle for you. You can also change height from camera to target, camera focal length, and upwards / downards tilt. Height and focal length have to be positive. To reset to defaults, you have to click update again (and update whenever you change something).
 
 <h2 id="variable_h">table of variables </h2>
