@@ -1,13 +1,19 @@
 import tkinter as tk
 import numpy as np
+from collections import namedtuple
 
-tape_height = 4.8125
-f = 284.772
-phi = -2
+default_height = tape_height = 4.8125
+default_f = f = 284.772
+default_phi = phi = -2
 x_img = 0
 y_img = 0
 
+x1 = None
+y1 = None
+
 def draw_dot(event):
+    global x1
+    global y1
     canvas.delete("all")
     input_canvas.delete("all")
 
@@ -23,7 +29,7 @@ def draw_dot(event):
     x_img = x1 - center_x
     y_img = canvas_height - y1
 
-    canvas.create_oval(x1, y1, x2, y2, fill = "white", width = 4, outline="white")
+    canvas.create_oval(x1 - 3, y1 - 3, x2 + 3, y2 + 3, fill = "lime green", width = 0, outline="white")
 
     if (x1 < center_x and (center_x - x1 > 10)):
         canvas.create_line(x1+5, y1, center_x, y1, fill = "red", width = 3)
@@ -64,7 +70,7 @@ def draw_dot(event):
 
         canvas.create_text(x1, temp_y - 10, anchor = "center", font = ("Purisa", 10), text = ("virtual y_img"), fill = "white")
 
-        canvas.create_oval(x1, temp_y, x1, temp_y, fill = "yellow", width = 4)
+        canvas.create_oval(x1 - 3, temp_y - 3, x1 + 3, temp_y + 3, fill = "yellow", width = 0)
 
     
     elif (phi < 0):
@@ -76,7 +82,7 @@ def draw_dot(event):
 
         canvas.create_text(x1, temp_y + 10, anchor = "center", font = ("Purisa", 10), text = ("virtual y_img"), fill = "white")
 
-        canvas.create_oval(x1, temp_y, x1, temp_y, fill = "yellow", width = 4)
+        canvas.create_oval(x1 - 3, temp_y - 3, x1 + 3, temp_y + 3, fill = "yellow", width = 0)
         
     else:
         input_canvas.create_text(10, 85, anchor = "w", font = ("Purisa", 10), text = ("no virtual y"), fill = "white")
@@ -139,6 +145,46 @@ click_num=0
 #                     command=lambda: calculate_distance())
 
 # buttonCommit.pack()
+
+frame = tk.Frame(top)
+select = tk.StringVar()
+select.set("height")
+menu = tk.OptionMenu(frame, select, "height", "focal length", "tilt", "reset all")
+input = tk.Entry(frame)
+
+def update():
+    global tape_height
+    global f
+    global phi
+    option = select.get()
+    if option != "reset all":
+        try:
+            value = float(input.get())
+        except Exception:
+            return
+
+    if option == "height":
+        tape_height = value
+    elif option == "focal length":
+        f = value
+    elif option == "tilt":
+        phi = value
+    else:
+        tape_height = default_height
+        f = default_f
+        phi = default_phi
+
+    FakeEvent = namedtuple("Event", ["x", "y"])
+
+    draw_dot(FakeEvent(x1, y1))
+
+button = tk.Button(frame, text="Update", command=update)
+
+
 canvas.pack()
 input_canvas.pack()
+menu.grid(row=0, column=0)
+input.grid(row=0, column=1)
+button.grid(row=0, column=2)
+frame.pack()
 top.mainloop()
